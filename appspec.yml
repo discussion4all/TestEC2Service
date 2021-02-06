@@ -78,8 +78,8 @@ hooks:
   #     timeout: 300
   #     runas: ec2-user
 
-   - BeforeInstall: "" 
-    - AfterInstall: "" 
-    - AfterAllowTestTraffic: ""
-    - BeforeAllowTraffic: ""
-    - AfterAllowTraffic: ""
+   BeforeInstall: "" 
+   AfterInstall: "" 
+   AfterAllowTestTraffic: ""
+   BeforeAllowTraffic: ""
+   AfterAllowTraffic: ""
