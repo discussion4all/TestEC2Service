@@ -23,7 +23,7 @@ os: linux
 #   may cause associated deployments to fail.
 files:
   - source: /
-    destination: /home/ec2-user/nodejs
+    destination: /home/ec2-user/html
 # For deployments to Amazon Linux and Ubuntu Server instances,
 #   you can specify a "permissions" 
 #   section here that describes special permissions to apply to the files 
@@ -61,19 +61,25 @@ hooks:
 #   incomplete event declarations may cause associated deployments to fail.
 # During the BeforeInstall deployment lifecycle event, run the commands 
 #   in the script specified in "location".
-  BeforeInstall:
-    - location: scripts/before_install.sh
-      timeout: 300
-      runas: ec2-user
+  # BeforeInstall:
+  #   - location: scripts/before_install.sh
+  #     timeout: 300
+  #     runas: ec2-user
 # During the AfterInstall deployment lifecycle event, run the commands 
 #   in the script specified in "location".
-  AfterInstall:
-    - location: scripts/after_install.sh
-      timeout: 300
-      runas: ec2-user
+  # AfterInstall:
+  #   - location: scripts/after_install.sh
+  #     timeout: 300
+  #     runas: ec2-user
 # During the ApplicationInstall deployment lifecycle event, run the commands 
 #   in the script specified in "location".
-  ApplicationStart:
-    - location: scripts/application_start.sh
-      timeout: 300
-      runas: ec2-user
+  # ApplicationStart:
+  #   - location: scripts/application_start.sh
+  #     timeout: 300
+  #     runas: ec2-user
+
+   - BeforeInstall: "" 
+    - AfterInstall: "" 
+    - AfterAllowTestTraffic: ""
+    - BeforeAllowTraffic: ""
+    - AfterAllowTraffic: ""
